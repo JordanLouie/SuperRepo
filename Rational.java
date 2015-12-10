@@ -47,14 +47,14 @@ public class Rational implements Comparable{
     //multiply
     //Takes Rational object as parameter and multiplies by this Rational object
     //Does not return value
-    public void multiply(Rational jordans){
+    public void multiply(Comparable jordans){
 	num *= jordans.num;
 	den *= jordans.den;
     }
     //divide
     //Takes Rational object as parameter and divides by this Rational object
     //Does not return value
-    public void divide(Rational aleks){
+    public void divide(Comparable aleks){
 	if (aleks.num == 0){
 	    System.out.print( "error, divide by zero");
 	}
@@ -66,7 +66,7 @@ public class Rational implements Comparable{
 
     //add
     //Takes one rational object and adds it to current rational object
-    public void add(Rational jordans) {
+    public void add(Comparable jordans) {
 	if (den == 0) 
 	    System.out.println("error, zero denominator");
 	else if (den == jordans.den){
@@ -74,20 +74,20 @@ public class Rational implements Comparable{
 	    den = jordans.den;} //base case
 	else {
 	    jordans.reduce();
-	    Rational temp = new Rational (num, den);
+	    Comparable temp = new Comparable (num, den);
 	    add(temp);
 	} //finding gcd and using recursion
     }
 
     //subtract
     //Works the same as add, except the operation is subtraction
-    public void subtract(Rational jordans) {
+    public void subtract(Comparable jordans) {
 	if (den == jordans.den)
 	    num -= jordans.num; // base case
 	// denominators are same
 	else {
 	    jordans.reduce();
-	    Rational temp = new Rational (num, den);
+	    Comparable temp = new Comparable (num, den);
 	    subtract(temp);
 	} //finding gcd and using recursion
     }
@@ -129,28 +129,28 @@ public class Rational implements Comparable{
 	    throw new NullPointerException("Error: null");
 	if (!(other instanceof Comparable))
 	    throw new ClassCastException("Error: not a Comparable");
-	    int i = 0;
-	    if(o instanceof Rational){
-	        Rational a = new Rational(this.num, this.den);
-	        Rational b = new Rational( ((Rational)o).num, ((Rational)o).den ); //Typecasting Object o to a Rational so that num and den can be called.
-	        a.reduce();
-	        b.reduce();
-	        if(a.num * b.den == b.num * a.den) {
-	            i = 0;
-	            return i;
-	        }
-	        else if(a.num * b.den > b.num * a.den){
-	            i = 1;
-	            return i;
-	        }
-	        else{
-	            i = -1;
-	            return i;
-	        }
+	int i = 0;
+	if(o instanceof Rational){
+	    Comparable a = new Comparable(this.num, this.den);
+	    Comparable b = new Comparable( ((Rational)o).num, ((Rational)o).den ); //Typecasting Object o to a Rational so that num and den can be called.
+	    a.reduce();
+	    b.reduce();
+	    if(a.num * b.den == b.num * a.den) {
+		i = 0;
+		return i;
 	    }
-	    i = -2;
-	    System.out.println("Invalid parameter, must be a Rational.");
-	    return i;
+	    else if(a.num * b.den > b.num * a.den){
+		i = 1;
+		return i;
+	    }
+	    else{
+		i = -1;
+		return i;
+	    }
+	}
+	i = -2;
+	System.out.println("Invalid parameter, must be a Rational.");
+	return i;
     }
     
     //equals method

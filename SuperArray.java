@@ -1,7 +1,7 @@
-//Team Panda - Jordan Louie, Derek Lin
+//Jordan Louie
 //APCS1 pd5
-//HW42 -- Array of Titanium
-//2015-12-07
+//HW45 -- Come Together
+//2015-12-09
 
 
 /*****************************
@@ -159,111 +159,15 @@ public class SuperArray {
     
     //main method for testing
     public static void main( String[] args ) {
+	SuperArray mix = new SuperArray();
+	mix.add( new Binary(2) );
+	mix.add( new Hexadecimal(60) );
+	mix.add( new Binary(16) );
+	mix.add( new Hexadecimal(100) );
+	mix.add( new Rational(2, 1) );
+	mix.addAtIndex(3, new Binary(null));
+
 	
-
-	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	SuperArray curtis = new SuperArray();
-	System.out.println("Printing empty SuperArray curtis...");
-	System.out.println(curtis);
-
-	for( int i = 0; i < curtis._data.length; i++ ) {
-	    curtis.set(i,i*2);
-	    curtis._size++; //necessary bc no add() method yet
-	}
-
-	System.out.println("Printing populated SuperArray curtis...");
-	System.out.println(curtis);
-
-	System.out.println("testing get()...");
-	for( int i = 0; i < curtis._size; i++ ) {
-	    System.out.print( "item at index" + i + ":\t" );
-	    System.out.println( curtis.get(i) );
-	}
-
-	System.out.println("Expanded SuperArray curtis:");
-	curtis.expand();
-	System.out.println(curtis);*/
-
-	Comparable blah = new SuperArray();
-
-	Comparable  mayfield = new SuperArray();
-	System.out.println("Printing empty SuperArray mayfield...");
-	System.out.println(mayfield);
-
-	mayfield.add((Binary)"1010");
-	mayfield.add((Hexadecimal) "1A");
-	mayfield.add(3,4);
-	mayfield.add((Binary) 5);
-	mayfield.add((Hecadecimal)1);
-
-	System.out.println("Printing populated SuperArray mayfield...");
-	System.out.println(mayfield);
-
-	mayfield.remove(3);
-	System.out.println("Printing SuperArray mayfield post-remove...");
-	System.out.println(mayfield);
-	mayfield.remove(3);
-	System.out.println("Printing SuperArray mayfield post-remove...");
-	System.out.println(mayfield);
-
-	mayfield.addAtIndex(3,99);
-	System.out.println("Printing SuperArray mayfield post-insert...");
-	System.out.println(mayfield);
-	mayfield.addAtIndex(2,88);
-	System.out.println("Printing SuperArray mayfield post-insert...");
-	System.out.println(mayfield);
-	mayfield.addAtIndex(1,77);
-	System.out.println("Printing SuperArray mayfield post-insert...");
-	System.out.println(mayfield);
-	  
-	  
-	//*****INSERT ANY ADDITIONAL TEST CALLS HERE*****
-	/*System.out.print("How big is mayfield currently?:");
-	System.out.println(mayfield.size());
-
-	ListInt panda = new SuperArray();
-	System.out.println("Printing empty SuperArray panda...");
-	System.out.println(panda);
-
-	panda.add(5);
-	panda.add(4);
-	panda.add(3);
-	panda.add(2);
-	panda.add(1);
-
-	System.out.println("Printing populated SuperArray panda...");
-	System.out.println(panda);
-
-	panda.remove(3);
-	System.out.println("Printing SuperArray panda post-remove...");
-	System.out.println(panda);
-	panda.remove(3);
-	System.out.println("Printing SuperArray panda post-remove...");
-	System.out.println(panda);
-
-	panda.addAtIndex(3,99);
-	System.out.println("Printing SuperArray panda post-insert...");
-	System.out.println(panda);
-	panda.addAtIndex(2,88);
-	System.out.println("Printing SuperArray panda post-insert...");
-	System.out.println(panda);
-	panda.addAtIndex(1,77);
-	System.out.println("Printing SuperArray panda post-insert...");
-	System.out.println(panda);
-	
-	System.out.println("How big is panda currently?:");
-	System.out.println(panda.size());
-	
-	panda.addAtIndex(7,66);
-	System.out.println("Printing SuperArray panda post-insert...");
-	System.out.println(panda);
-
-	System.out.println("How big is panda currently?:");
-	System.out.println(panda.size());
-	
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-	  
     }//end main
 		
 }//end class
