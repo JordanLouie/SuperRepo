@@ -3,7 +3,7 @@
 //HW44 -- This or That or Fourteen Other Things
 //2015-12-08
 
-public class Hexadecimal {
+public class Hexadecimal implements Comparable{
     
     private final static String HEXDIGITS = "0123456789ABCDEF"; 
     private int _decNum;
@@ -68,7 +68,12 @@ public class Hexadecimal {
     
    
     public int compareTo( Object other ) {
-    	return this._decNum - ((Hexadecimal)other)._decNum;
+	if (other == null)
+	    throw new NullPointerException("Error: null");
+	if (!(other instance of Comparable))
+	    throw new ClassCastException("Error: not a Comparable");
+    	else
+	    return this._decNum - ((Hexadecimal)other)._decNum;
     }
     
     //main method for testing

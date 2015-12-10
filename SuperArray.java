@@ -19,11 +19,11 @@
  *  remove item (while maintaining "left-justification")
  *****************************/
 
-public class SuperArray implements ListInt{
+public class SuperArray {
  
     //~~~~~INSTANCE VARS~~~~~
     //underlying container, or "core" of this data structure:
-    private int[] _data;
+    private Comparable[] _data;
 
     //position of last meaningful value
     private int _lastPos;
@@ -36,7 +36,7 @@ public class SuperArray implements ListInt{
     //default constructor – initializes 10-item array
     public SuperArray() 
     { 
-	_data = new int[10];
+	_data = new Comparable[10];
 	_lastPos = -1; //flag to indicate no lastpos yet
 	_size = 0;	
     }
@@ -71,7 +71,7 @@ public class SuperArray implements ListInt{
     //double capacity of this SuperArray
     private void expand() 
     { 
-	int[] temp = new int[ _data.length * 2 ];
+	Comparable[] temp = new Comparable[ _data.length * 2 ];
 	for( int i = 0; i < _data.length; i++ )
 	    temp[i] = _data[i];
 	_data = temp;
@@ -137,7 +137,26 @@ public class SuperArray implements ListInt{
 	return _size;
     }
 
+    //-----SuperRepo-----
 
+    //linSearch- returns index of comparable or -1 if not there
+    public int linSearch (Comparable c) {
+	for (int i = 0; i < _data.length; i++) {
+	    if (_data[i] == c)
+		return i;
+	}
+	return -1;
+    }
+
+    //isSorted - true if elements sorted least to greatest, else -- false
+    public boolean isSorted() {
+	for (int i = 0; i < _data.length; i++){
+	    if (!(_data[i] <= _data[i + 1]))
+		return false;
+	}
+	return true;
+    }
+    
     //main method for testing
     public static void main( String[] args ) 
     {
@@ -195,8 +214,7 @@ public class SuperArray implements ListInt{
 	  
 	  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-	//*****INSERT ANY ADDITIONAL TEST CALLS HERE*****
+	  //*****INSERT ANY ADDITIONAL TEST CALLS HERE*****
 	  System.out.print("How big is mayfield currently?:");
 	  System.out.println(mayfield.size());
 
@@ -239,6 +257,8 @@ public class SuperArray implements ListInt{
 
 	System.out.println("How big is panda currently?:");
 	System.out.println(panda.size());
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 	  
     }//end main
 		

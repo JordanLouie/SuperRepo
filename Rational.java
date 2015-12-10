@@ -125,6 +125,10 @@ public class Rational implements Comparable{
       return 1 if calling num > param
       return -1 if calling num < param*/
     public int compareTo(Object o) {
+	if (other == null)
+	    throw new NullPointerException("Error: null");
+	if (!(other instance of Comparable))
+	    throw new ClassCastException("Error: not a Comparable");
 	    int i = 0;
 	    if(o instanceof Rational){
 	        Rational a = new Rational(this.num, this.den);

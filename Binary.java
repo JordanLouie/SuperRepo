@@ -5,7 +5,7 @@
 
 //skeleton file for class Binary
 
-public class Binary {
+public class Binary implements Comparable{
 
     private int _decNum; 
     private String _binNum;
@@ -154,7 +154,12 @@ public class Binary {
       negative integer if this<input, positive integer otherwise
       =============================================*/
     public int compareTo( Object other ) {
-	return this._decNum - ((Binary)other)._decNum;
+	if (other == null)
+	    throw new NullPointerException("Error: null");
+	if (!(other instance of Comparable))
+	    throw new ClassCastException("Error: not a Comparable");
+	else
+	    return this._decNum - ((Binary)other)._decNum;
     }
 
 
