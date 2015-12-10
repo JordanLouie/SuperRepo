@@ -70,7 +70,7 @@ public class Hexadecimal implements Comparable{
     public int compareTo( Object other ) {
 	if (other == null)
 	    throw new NullPointerException("Error: null");
-	if (!(other instance of Comparable))
+	if (!(other instanceof Comparable))
 	    throw new ClassCastException("Error: not a Comparable");
     	else
 	    return this._decNum - ((Hexadecimal)other)._decNum;

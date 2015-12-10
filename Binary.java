@@ -156,7 +156,7 @@ public class Binary implements Comparable{
     public int compareTo( Object other ) {
 	if (other == null)
 	    throw new NullPointerException("Error: null");
-	if (!(other instance of Comparable))
+	if (!(other instanceof Comparable))
 	    throw new ClassCastException("Error: not a Comparable");
 	else
 	    return this._decNum - ((Binary)other)._decNum;

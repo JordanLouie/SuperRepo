@@ -79,14 +79,14 @@ public class SuperArray {
 
 		
     //accessor -- return value at specified index
-    public int get( int index ) { return _data[index]; }
+    public Comparable get( int index ) { return _data[index]; }
 
 		
     //mutator -- set value at index to newVal, 
     //           return old value at index
-    public int set( int index, int newVal ) 
+    public Comparable set( int index, Comparable newVal ) 
     { 
- 	int temp = _data[index];
+ 	Comparable temp = _data[index];
 	_data[index] = newVal;
 	return temp;
     }
@@ -94,7 +94,7 @@ public class SuperArray {
 
     // ~~~~~~~~~~~~~~ PHASE II ~~~~~~~~~~~~~~
     //adds an item after the last item
-    public void add( int newVal ) {
+    public void add( Comparable newVal ) {
 	_data[_lastPos+1] = newVal;
 
 	//update vars
@@ -105,7 +105,7 @@ public class SuperArray {
 
     //inserts an item at index
     //shifts existing elements to the right
-    public void addAtIndex( int index, int newVal ) {
+    public void addAtIndex( int index, Comparable newVal ) {
 	//shifts elements to right, starting from right
 	for (int i = _lastPos; i >= index; i--){
 	    _data[i + 1] = _data[i];
@@ -151,15 +151,17 @@ public class SuperArray {
     //isSorted - true if elements sorted least to greatest, else -- false
     public boolean isSorted() {
 	for (int i = 0; i < _data.length; i++){
-	    if (!(_data[i] <= _data[i + 1]))
+	    if (!(_data[i] < _data[i + 1]))
 		return false;
 	}
 	return true;
     }
     
     //main method for testing
-    public static void main( String[] args ) 
-    {
+    public static void main( String[] args ) {
+	
+
+	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	SuperArray curtis = new SuperArray();
 	System.out.println("Printing empty SuperArray curtis...");
 	System.out.println(curtis);
@@ -180,45 +182,46 @@ public class SuperArray {
 
 	System.out.println("Expanded SuperArray curtis:");
 	curtis.expand();
-	System.out.println(curtis);
+	System.out.println(curtis);*/
 
-	SuperArray mayfield = new SuperArray();
+	Comparable blah = new SuperArray();
+
+	Comparable  mayfield = new SuperArray();
 	System.out.println("Printing empty SuperArray mayfield...");
 	System.out.println(mayfield);
 
-	  mayfield.add(5);
-	  mayfield.add(4);
-	  mayfield.add(3);
-	  mayfield.add(2);
-	  mayfield.add(1);
+	mayfield.add((Binary)"1010");
+	mayfield.add((Hexadecimal) "1A");
+	mayfield.add(3,4);
+	mayfield.add((Binary) 5);
+	mayfield.add((Hecadecimal)1);
 
-	  System.out.println("Printing populated SuperArray mayfield...");
-	  System.out.println(mayfield);
+	System.out.println("Printing populated SuperArray mayfield...");
+	System.out.println(mayfield);
 
-	  mayfield.remove(3);
-	  System.out.println("Printing SuperArray mayfield post-remove...");
-	  System.out.println(mayfield);
-	  mayfield.remove(3);
-	  System.out.println("Printing SuperArray mayfield post-remove...");
-	  System.out.println(mayfield);
+	mayfield.remove(3);
+	System.out.println("Printing SuperArray mayfield post-remove...");
+	System.out.println(mayfield);
+	mayfield.remove(3);
+	System.out.println("Printing SuperArray mayfield post-remove...");
+	System.out.println(mayfield);
 
-	  mayfield.addAtIndex(3,99);
-	  System.out.println("Printing SuperArray mayfield post-insert...");
-	  System.out.println(mayfield);
-	  mayfield.addAtIndex(2,88);
-	  System.out.println("Printing SuperArray mayfield post-insert...");
-	  System.out.println(mayfield);
-	  mayfield.addAtIndex(1,77);
-	  System.out.println("Printing SuperArray mayfield post-insert...");
-	  System.out.println(mayfield);
+	mayfield.addAtIndex(3,99);
+	System.out.println("Printing SuperArray mayfield post-insert...");
+	System.out.println(mayfield);
+	mayfield.addAtIndex(2,88);
+	System.out.println("Printing SuperArray mayfield post-insert...");
+	System.out.println(mayfield);
+	mayfield.addAtIndex(1,77);
+	System.out.println("Printing SuperArray mayfield post-insert...");
+	System.out.println(mayfield);
 	  
-	  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	  
+	//*****INSERT ANY ADDITIONAL TEST CALLS HERE*****
+	/*System.out.print("How big is mayfield currently?:");
+	System.out.println(mayfield.size());
 
-	  //*****INSERT ANY ADDITIONAL TEST CALLS HERE*****
-	  System.out.print("How big is mayfield currently?:");
-	  System.out.println(mayfield.size());
-
-	 	ListInt panda = new SuperArray();
+	ListInt panda = new SuperArray();
 	System.out.println("Printing empty SuperArray panda...");
 	System.out.println(panda);
 
@@ -257,6 +260,7 @@ public class SuperArray {
 
 	System.out.println("How big is panda currently?:");
 	System.out.println(panda.size());
+	
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 	  

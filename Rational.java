@@ -127,7 +127,7 @@ public class Rational implements Comparable{
     public int compareTo(Object o) {
 	if (other == null)
 	    throw new NullPointerException("Error: null");
-	if (!(other instance of Comparable))
+	if (!(other instanceof Comparable))
 	    throw new ClassCastException("Error: not a Comparable");
 	    int i = 0;
 	    if(o instanceof Rational){
